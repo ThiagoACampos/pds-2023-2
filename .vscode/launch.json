@@ -1,0 +1,26 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Express App",
+			"runtimeExecutable": "${workspaceFolder}/backEnd/node_modules/nodemon/bin/nodemon.js",
+			"program": "${workspaceFolder}/backEnd/index.js",
+			"cwd": "${workspaceFolder}",
+			"protocol": "inspector",
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"outFiles": [
+				"${workspaceFolder}/out/**/*.js"
+			],
+			"sourceMaps": true,
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"restart": true,
+			"console": "integratedTerminal"
+		}
+	]
+}

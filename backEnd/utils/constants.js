@@ -1,0 +1,6 @@
+const PRODUCTIVITY_HOURS_DAY = 5
+
+
+module.exports = {
+	PRODUCTIVITY_HOURS_DAY
+}
