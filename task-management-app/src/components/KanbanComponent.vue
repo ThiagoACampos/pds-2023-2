@@ -2,7 +2,7 @@
   <div class="container mt-2 mb-3">
     <div class="row">
       <div class="col mx-2 px-2 py-3 alert alert-primary border rounded">
-          <h3>Todo</h3>
+          <h3>To do</h3>
           <draggable class="draggable-list" :list="tasks.todo" group="tasks">
             <div v-for="(todo, i) in tasks.todo" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">

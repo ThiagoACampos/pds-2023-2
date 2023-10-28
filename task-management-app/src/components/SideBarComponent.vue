@@ -2,7 +2,7 @@
   <div>
     <b-sidebar id="sidebar-1" title="Sidebar" no-header visible shadow>
       <div class="pt-4 px-3 py-2">
-        <h2>Gest Tarefas</h2>
+        <img src="../assets/GestTarefas.png" width="250px">
         <div class="pt-3">
           <b-button block variant="outline-secondary" class="w-100">Kanban</b-button>
         </div>
