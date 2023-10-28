@@ -14,7 +14,8 @@ const {
 } = require('../businesCases/userCases')
 const { myTaskMock, myUserMock } = require('../entities/mock')
 const { handleErrors } = require('../utils/errorTreatment');
-const { routes } = require('..');
+
+const { callApp } = require('../tests/testRequest')
 
 
 try {
@@ -24,47 +25,73 @@ try {
 	})
 
 	// Tasks calls
-	router.get('/task/create', async (req, res) => {
-		res.send(await createTask(myTaskMock))
+	router.post('/task/create', async (req, res) => {
+		await createTask(req.body)
+			.then(result => res.status(200).send(result))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')})
 	})
 
-	router.get('/task/delete', async (req, res) => {
-		res.send(await deleteTask(myTaskMock))
+	router.post('/task/delete', async (req, res) => {
+		await deleteTask(req.body)
+			.then(result => res.status(200).send(result))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')})
 	})
 
-	router.get('/task/edit', async (req, res) => {
-		res.send(await updateTask(myTaskMock))
+	router.post('/task/edit', async (req, res) => {
+		await updateTask(req.body)
+			.then(result => res.status(200).send(result))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')})
 	})
 
 	router.get('/task/getall', async (req, res) => {
-		res.send(await getAllTasks())
+		await getAllTasks()
+		.then(result => res.status(200).send(result))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')})
 	})
 
 	// User calls
-	router.get('/user/create', async (req, res) => {
-		res.send(await createUser(myUserMock))
-	})
-
-	router.get('/user/delete', async (req, res) => {
-		res.send(await deleteUser(myUserMock))
-	})
-
-	router.get('/user/edit', async (req, res) => {
-		await updateUser(myUserMock)
+	router.post('/user/create', async (req, res) => {
+		await createUser(req.body)
 			.then(result => res.status(200).send(result))
-			.catch(err => res.redirect('/error'))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')})
+	})
+
+	router.post('/user/delete', async (req, res) => {
+		await deleteUser(req.body)
+			.then(result => res.status(200).send(result))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')})
+	})
+
+	router.post('/user/edit', async (req, res) => {
+		await updateUser(req.body)
+			.then(result => res.status(200).send(result))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')})
 	})
 
 	router.get('/user/getall', async (req, res) => {
-		res.send(await getAllUsers())
+		await getAllUsers()
+			.then(result => res.status(200).send(result))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')})
 	})
 
-	router.get('/user/getall', async (req, res) => {
-		res.send(await getAllUsers())
-	})
 
 	// Error routes
-
 	router.get('/error', async (req, res) => {
 		res.send('<h1>Gremlins in the server room. ! Sorry :( </h1>')
 	})
@@ -75,5 +102,5 @@ try {
 	const errorResponse = handleErrors(error)
 }
 
-
+// callApp() Use only for testing all routs
 module.exports = router

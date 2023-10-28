@@ -1,9 +1,11 @@
 const { request } = require("..")
 const currentDateTimeISO = new Date().toISOString();
 
+const randomNum = Math.floor(Math.random() * 1000) + 1
+
 const myTaskMock = {
 	id: 16,
-	taskName: 'ADO-686768 things for the deploy',
+	taskName: 'ADO-686768 things for the deploy' + randomNum,
 	priority: 0,
 	owner: 1,
 	staff: 2,
@@ -30,9 +32,10 @@ module.exports = {
 	myUserMock
 }
 
-// Arrumar BD trocar pra nova esturtura de nomeTarefa ok
+// Arrumar BD trocar pra nova esturtura de Tarefa ok
+
 // organizar as rotas para receber request
-// Criar a lógica para calcular início e fim da nomeTarefa
+// Criar a lógica para calcular início e fim da Tarefa
 // Criar lógica para devolver o calendário
 
 
