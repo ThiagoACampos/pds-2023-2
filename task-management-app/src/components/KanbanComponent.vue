@@ -7,7 +7,7 @@
             <div v-for="(todo, i) in tasks.todo" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
                 <div class="position-relative">
-                  <p>{{ todo }}</p>
+                  <p>{{ todo.taskName }}</p>
                   <div class="container">
                     <div class="row justify-content-end">
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
@@ -24,7 +24,7 @@
         <draggable class="draggable-list" :list="tasks.inProgress" group="tasks">
             <div v-for="(inProgress, i) in tasks.inProgress" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
-                <p>{{ inProgress }}</p>
+                <p>{{ inProgress.taskName }}</p>
                 <div class="container">
                     <div class="row justify-content-end">
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
@@ -40,7 +40,7 @@
         <draggable class="draggable-list" :list="tasks.done" group="tasks">
             <div v-for="(done, i) in tasks.done" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
-                <p>{{ done }}</p>
+                <p>{{ done.taskName }}</p>
                 <div class="container">
                     <div class="row justify-content-end">
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
@@ -56,7 +56,10 @@
 </template>
 
 <script>
+
 import draggable from "vuedraggable";
+import axios from 'axios'
+
 export default {
   components: {
     draggable,
@@ -64,12 +67,36 @@ export default {
   data() {
     return {
       tasks: {
-        todo: ["Migrate codebase to TypeScript"],
-        inProgress: ["Dockerize App", "Add vue.draggable to project"],
-        done: ["Implement Web3 Features", "Bump to vite.js"]
+        todo: [],
+        inProgress: [],
+        done: []
       },
     };
   },
+  created: function(){
+    this.getAllTasks()
+  },
+  methods:{
+    getAllTasks: function(){
+      axios.get("http://localhost:3000/task/getall")
+            .then(response => {
+              console.log(response);
+              var tasks = response.data;
+              this.setTasksByStatus(tasks);
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    },
+    setTasksByStatus(tasks){
+      var toDoTasks = tasks.filter( task => task.status == "TO_DO");
+      var inProgressTasks = tasks.filter( task => task.status == "IN_PROGRESS");
+      var doneTasks = tasks.filter( task => task.status == "DONE");
+      this.tasks.todo = toDoTasks;
+      this.tasks.inProgress = inProgressTasks;
+      this.tasks.done = doneTasks;
+    }
+  }
 };
 </script>
 

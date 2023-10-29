@@ -45,10 +45,13 @@
       }
     },
     methods: {
-      onSubmit(event) {
-        event.preventDefault()
+      onSubmit() {
+        console.log("passou")
+        //event.preventDefault()
         axios.post("http://localhost:3000/task/create", this.form)
-            .then(response => console.log(response))
+            .then(response => {
+              console.log(response);
+            })
             .catch((error) => {
                 console.log(error)
             })

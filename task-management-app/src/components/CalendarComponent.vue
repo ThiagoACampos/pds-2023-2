@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+    <div id="app">
     <Schedule :time-ground="['09:00', '18:00']" 
     :week-ground="['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']" 
     :task-detail = "
@@ -71,7 +71,7 @@
         }
 
       ],
-	  [
+      [
         {
           dateStart: '12:30',
           dateEnd: '13:30',
@@ -81,7 +81,7 @@
           dateStart: '14:30',
           dateEnd: '15:50',
           title: 'Test',
-		  detail: 'Metting (German: Mettingen) is a commune in the Moselle department in Grand Est in north-eastern France.'
+          detail: 'Metting (German: Mettingen) is a commune in the Moselle department in Grand Est in north-eastern France.'
         }
 
       ]

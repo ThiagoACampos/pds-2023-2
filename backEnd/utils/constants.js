@@ -1,7 +1,7 @@
 const PRODUCTIVITY_HOURS_DAY = 5
-const TO_DO = 'To Do'
-const IN_PROGRESS = 'In Progress'
-const DONE = 'Done'
+const TO_DO = 'TO_DO'
+const IN_PROGRESS = 'IN_PROGRESS'
+const DONE = 'DONE'
 
 
 module.exports = {
