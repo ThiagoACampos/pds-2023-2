@@ -79,6 +79,6 @@ h3 {
   font-weight: bold;
 }
 .col {
-  height: 90vh;
+  height: 95vh;
 }
 </style>
