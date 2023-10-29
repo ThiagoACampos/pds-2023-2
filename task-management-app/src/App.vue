@@ -4,6 +4,7 @@
       <SideBarComponent></SideBarComponent>
       <KanbanComponent></KanbanComponent>
       <AddTaskComponent></AddTaskComponent>
+      <AddColaboratorComponent></AddColaboratorComponent>
     </div>
     
   </div>
@@ -14,13 +15,15 @@
 import SideBarComponent from './components/SideBarComponent.vue';
 import KanbanComponent from './components/KanbanComponent.vue';
 import AddTaskComponent from './components/AddTaskComponent.vue';
+import AddColaboratorComponent from "@/components/AddColaboratorComponent.vue";
 
 export default {
   name: 'App',
   components: {
     SideBarComponent,
     KanbanComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    AddColaboratorComponent
   }
 }
 </script>

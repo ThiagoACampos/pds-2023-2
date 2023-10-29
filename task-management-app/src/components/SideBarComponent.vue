@@ -7,14 +7,16 @@
           <b-button block variant="outline-secondary" class="w-100">Kanban</b-button>
         </div>
         <div class="pt-3">
-          <b-button  v-b-modal.modal-1 block variant="outline-secondary" class="w-100">Add Task</b-button>
-          <add-task-modal></add-task-modal>
+          <b-button v-b-modal.modal-1 block variant="outline-secondary" class="w-100">Add Task</b-button>
         </div>
         <div class="pt-3">
           <b-button block variant="outline-secondary" class="w-100">Manage Categories</b-button>
         </div>
         <div class="pt-3">
-          <b-button block variant="outline-secondary" class="w-100">Add Colaborator</b-button>
+          <b-button v-b-modal.modal-2 block variant="outline-secondary" class="w-100">Add Colaborator</b-button>
+        </div>
+        <div class="pt-3">
+          <b-button block variant="outline-secondary" class="w-100">Calendar View</b-button>
         </div>
       </div>
     </b-sidebar>
