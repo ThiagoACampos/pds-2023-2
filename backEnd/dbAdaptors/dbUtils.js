@@ -41,7 +41,7 @@ async function updateData(table, data) {
 	if (id){
 		delete data.id
 	} else{
-		throw new Error('UpdateData in DB missing id')
+		throw new Error('UpdateData function.Data is missing id!')
 	}
 
 	const connection = await mysql.createConnection(connectionConfigs)
