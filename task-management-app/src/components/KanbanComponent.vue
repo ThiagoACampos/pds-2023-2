@@ -6,7 +6,25 @@
           <draggable class="draggable-list" :list="tasks.todo" group="tasks">
             <div v-for="(todo, i) in tasks.todo" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
-                <p>{{ todo }}</p>
+                <div class="position-relative">
+                  <p>{{ todo }}</p>
+                  <div class="container">
+                    <div class="row justify-content-end">
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
+                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </draggable>
@@ -17,6 +35,22 @@
             <div v-for="(inProgress, i) in tasks.inProgress" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
                 <p>{{ inProgress }}</p>
+                <div class="container">
+                    <div class="row justify-content-end">
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
+                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
+                    </div>
+                  </div>
               </div>
             </div>
           </draggable>
@@ -27,6 +61,22 @@
             <div v-for="(done, i) in tasks.done" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
                 <p>{{ done }}</p>
+                <div class="container">
+                    <div class="row justify-content-end">
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"></div>
+                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
+                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
+                    </div>
+                  </div>
               </div>
             </div>
           </draggable>
