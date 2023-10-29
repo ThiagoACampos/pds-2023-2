@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8cff8e5-5ecd-427e-aea3-736c27113744" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backEnd/entities/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/entities/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-management-app/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-management-app/src/components/SideBarComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/components/SideBarComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-app/src/components/AddColaboratorComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/components/AddColaboratorComponent.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
       <updated>1698266968182</updated>
       <workItem from="1698266969375" duration="2720000" />
       <workItem from="1698453581912" duration="16457000" />
-      <workItem from="1698547877675" duration="4844000" />
+      <workItem from="1698547877675" duration="6067000" />
     </task>
     <servers />
   </component>

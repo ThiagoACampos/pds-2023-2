@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -45,7 +47,11 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault()
-          // ...
+      axios.post("http://localhost:3000/user/createUser", this.form)
+          .then(response => console.log(response))
+          .catch((error) => {
+            console.log(error)
+          })
     },
     onReset(event) {
       event.preventDefault()
