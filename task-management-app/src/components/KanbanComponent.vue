@@ -10,16 +10,6 @@
                   <p>{{ todo }}</p>
                   <div class="container">
                     <div class="row justify-content-end">
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
                     </div>
@@ -37,16 +27,6 @@
                 <p>{{ inProgress }}</p>
                 <div class="container">
                     <div class="row justify-content-end">
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
                     </div>
@@ -63,16 +43,6 @@
                 <p>{{ done }}</p>
                 <div class="container">
                     <div class="row justify-content-end">
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
-                      <div class="col-sm"></div>
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
                     </div>

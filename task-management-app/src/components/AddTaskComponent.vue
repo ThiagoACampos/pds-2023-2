@@ -30,11 +30,15 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     data() {
       return {
         form: {
           category: null,
+          priority: -1,
+          status: 'TO_DO'
         },
         categories: [{ text: 'Select One', value: null }, 'Frontend', 'Backend', 'Database', 'UX'],
         show: true
@@ -43,15 +47,19 @@
     methods: {
       onSubmit(event) {
         event.preventDefault()
-        alert(JSON.stringify(this.form))
+        axios.post("http://localhost:3000/task/create", this.form)
+            .then(response => console.log(response))
+            .catch((error) => {
+                console.log(error)
+            })
       },
       onReset(event) {
         event.preventDefault()
         // Reset our form values
-        this.form.email = ''
-        this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
+        this.form.taskName = ''
+        this.form.description = ''
+        this.form.category = ''
+        this.form.workload = ''
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {

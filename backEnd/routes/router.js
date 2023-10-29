@@ -24,8 +24,8 @@ try {
 	})
 
 	// Tasks calls
-	router.get('/task/create', async (req, res) => {
-		res.send(await createTask(myTaskMock))
+	router.post('/task/create', async (req, res) => {
+		res.send(await createTask(req.body))
 	})
 
 	router.get('/task/delete', async (req, res) => {
