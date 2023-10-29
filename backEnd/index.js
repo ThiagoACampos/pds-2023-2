@@ -1,5 +1,6 @@
 const express = require('express')
 const router = require('./routes/router')
+const bodyParser = require('body-parser');
 const app = express()
 var cors = require('cors');
 const port = 3000
@@ -13,8 +14,8 @@ var corsOptions = {
   optionsSuccessStatus: 200,
 }
 
-app.use(express.json());
 app.use(cors(corsOptions));
+app.use(bodyParser.json())
 app.use('/', router);
 
 
