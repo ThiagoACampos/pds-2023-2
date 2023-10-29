@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col mx-2 px-2 py-3 alert alert-primary border rounded">
           <h3>To do</h3>
-          <draggable class="draggable-list" :list="tasks.todo" group="tasks">
+          <draggable class="draggable-list" :list="tasks.todo" group="tasks" @change="changedTodo">
             <div v-for="(todo, i) in tasks.todo" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
                 <div class="position-relative">
@@ -21,7 +21,7 @@
       </div>
       <div class="col mx-2 px-2 py-3 alert alert-warning border rounded">
         <h3>In Progress</h3>
-        <draggable class="draggable-list" :list="tasks.inProgress" group="tasks">
+        <draggable class="draggable-list" :list="tasks.inProgress" group="tasks" @change="changedInProgress">
             <div v-for="(inProgress, i) in tasks.inProgress" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
                 <p>{{ inProgress.taskName }}</p>
@@ -37,7 +37,7 @@
       </div>
       <div class="col mx-2 px-2 py-3 alert alert-success border rounded">
         <h3>Done</h3>
-        <draggable class="draggable-list" :list="tasks.done" group="tasks">
+        <draggable class="draggable-list" :list="tasks.done" group="tasks" @change="changedDone">
             <div v-for="(done, i) in tasks.done" :key="i">
               <div class="bg-white mt-3 p-2 shadow border rounded">
                 <p>{{ done.taskName }}</p>
@@ -88,6 +88,15 @@ export default {
                 console.log(error)
             })
     },
+    updateTask(task){
+      axios.post("http://localhost:3000/task/edit", task)
+            .then(response => {
+              console.log(response);
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    },
     setTasksByStatus(tasks){
       var toDoTasks = tasks.filter( task => task.status == "TO_DO");
       var inProgressTasks = tasks.filter( task => task.status == "IN_PROGRESS");
@@ -95,6 +104,27 @@ export default {
       this.tasks.todo = toDoTasks;
       this.tasks.inProgress = inProgressTasks;
       this.tasks.done = doneTasks;
+    },
+    changedTodo(event){
+      if(event.added){
+        var task = event.added.element;
+        task.status = 'TO_DO';
+        this.updateTask(task);
+      }
+    },
+    changedInProgress(event){
+      if(event.added){
+        var task = event.added.element;
+        task.status = 'IN_PROGRESS';
+        this.updateTask(task);
+      }
+    },
+    changedDone(event){
+      if(event.added){
+        var task = event.added.element;
+        task.status = 'DONE';
+        this.updateTask(task);
+      }
     }
   }
 };
