@@ -5,18 +5,18 @@ const {
 	createTask,
 	updateTask,
 	deleteTask
-} = require('../businesCases/taskCases')
+} = require('../businessCases/taskCases')
 const {
 	createUser,
 	deleteUser,
 	updateUser,
 	getAllUsers
-} = require('../businesCases/userCases')
+} = require('../businessCases/userCases')
 const { myTaskMock, myUserMock } = require('../entities/mock')
 const { handleErrors } = require('../utils/errorTreatment');
 
 const { callApp } = require('../tests/testRequest')
-const { getCalendarDays } = require('../businesCases/calendar')
+const { getCalendar } = require('../businessCases/calendar')
 
 
 
@@ -92,6 +92,17 @@ try {
 				res.redirect('/error')})
 	})
 
+	// Calendar route
+
+	router.get('/calendar', async (req, res) => {
+		await getCalendar()
+			.then(result => res.status(200).send(result))
+			.catch(err => {
+				console.log(err)
+				res.redirect('/error')
+			})
+	})
+
 
 	// Error routes
 	router.get('/error', async (req, res) => {
@@ -104,8 +115,8 @@ try {
 	const errorResponse = handleErrors(error)
 }
 
-callApp()
-// getCalendarDays()
+// callApp()
+// getCalendar()
 // Use callApp only for testing routes
 
 
