@@ -102,5 +102,5 @@ try {
 	const errorResponse = handleErrors(error)
 }
 
-// callApp() Use only for testing all routs
+// callApp() Use only for testing all routes
 module.exports = router
