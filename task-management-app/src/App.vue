@@ -3,6 +3,7 @@
     <div class="grid">
       <SideBarComponent></SideBarComponent>
       <KanbanComponent></KanbanComponent>
+      <AddTaskComponent></AddTaskComponent>
     </div>
     
   </div>
@@ -12,12 +13,14 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import SideBarComponent from './components/SideBarComponent.vue';
 import KanbanComponent from './components/KanbanComponent.vue';
+import AddTaskComponent from './components/AddTaskComponent.vue';
 
 export default {
   name: 'App',
   components: {
     SideBarComponent,
-    KanbanComponent
+    KanbanComponent,
+    AddTaskComponent
   }
 }
 </script>
