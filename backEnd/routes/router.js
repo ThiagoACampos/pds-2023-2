@@ -16,6 +16,8 @@ const { myTaskMock, myUserMock } = require('../entities/mock')
 const { handleErrors } = require('../utils/errorTreatment');
 
 const { callApp } = require('../tests/testRequest')
+const { getCalendarDays } = require('../businesCases/calendar')
+
 
 
 try {
@@ -102,5 +104,9 @@ try {
 	const errorResponse = handleErrors(error)
 }
 
-// callApp() Use only for testing all routes
+callApp()
+getCalendarDays()
+// Use callApp only for testing routes
+
+
 module.exports = router

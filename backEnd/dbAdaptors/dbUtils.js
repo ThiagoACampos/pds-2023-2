@@ -66,6 +66,18 @@ async function getAllData(table) {
 	return rows
 }
 
+async function getOneData(table, id) {
+	const connection = await mysql.createConnection(connectionConfigs)
+
+	const queryString = getOneDataString(table, id)
+
+	const [rows, fields] = await connection.query(queryString, id)
+	
+	connection.end()
+
+	return rows
+}
+
 async function testFunction(params) {
 	const rs = await insertData('tasks', myTaskMock)
 	console.log('\n\n\n >>>>>>>>>>>>>>> my results <<<<<<<<<<<<<<<<<<<<<\n\n\n', rs)
@@ -110,9 +122,13 @@ function getDeleteString(table) {
 	return `DELETE FROM ${table} WHERE id = ?`
 }
 
+function getOneDataString(table) {
+	return `SELECT * FROM ${table} WHERE id = ?`
+}
 module.exports = {
 	insertData,
 	deleteData,
 	updateData,
-	getAllData
+	getAllData,
+	getOneData
 }

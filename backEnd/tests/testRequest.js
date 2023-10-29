@@ -1,16 +1,16 @@
 const axios = require('axios');
 
 const mockTask = {
-	id: 1,
-	taskName: 'ADO-686768 things for the deploy' + Math.floor(Math.random() * 1000),
-	priority: 0,
+	id: 42,
+	taskName: 'Random Tasks' + Math.floor(Math.random() * 1000),
+	priority: 4,
 	owner: 1,
 	staff: 2,
 	description: '',
-	status: '',
+	status: 'Done',
 	//   startDate: new Date().toISOString(),
 	//   endDate: new Date().toISOString(),
-	effortInHours: 9,
+	effortInHours: 1,
 };
 
 
@@ -36,7 +36,7 @@ async function testPost(body, path) {
 	console.log(response.data)
 }
 
-async function testGet( path) {
+async function testGet(path) {
 	const options = {
 		method: 'get',
 		url: `http://localhost:3000/${path}`,
@@ -48,47 +48,69 @@ async function testGet( path) {
 
 async function callApp() {
 
-	try {
-		await testPost(mockTask, 'task/edit')
-	} catch (error) {
-		console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
-	}
-	try {
-		await testPost(mockTask, 'task/create')
-	} catch (error) {
-		console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
-	}
-	try {
-		await testPost(mockTask, 'task/delete')
-	} catch (error) {
-		console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
-	}
-	try {
-		await testGet('task/getall')
-	} catch (error) {
-		console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
-	}
-	try {
-		await testPost(mockUser, 'user/edit')
-	} catch (error) {
-		console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
-	}
-	try {
-		await testPost(mockUser, 'user/create')
-	} catch (error) {
-		console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
-	}
-	try {
-		await testPost(mockUser, 'user/delete')
-	} catch (error) {
-		console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
-	}
-	try {
-		await testGet('user/getall')
-	} catch (error) {
-		console.log('\n\n>>>>>>>>>>>>>ERROR<<<<<<<<<<\n', error.response.statusText)
-	}
+	const key = 'task/edit'
 
+	switch (key) {
+
+		case 'task/edit':
+			try {
+				await testPost(mockTask, 'task/edit')
+			} catch (error) {
+				console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
+			}
+			break;
+		case 'task/create':
+			try {
+				await testPost(mockTask, 'task/create')
+			} catch (error) {
+				console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
+			}
+			break;
+		case 'task/delete':
+			try {
+				await testPost(mockTask, 'task/delete')
+			} catch (error) {
+				console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
+			}
+			break;
+		case 'task/getall':
+			try {
+				await testGet('task/getall')
+			} catch (error) {
+				console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
+			}
+			break;
+		case 'user/edit':
+			try {
+				await testPost(mockUser, 'user/edit')
+			} catch (error) {
+				console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
+			}
+			break;
+		case 'user/create':
+			try {
+				await testPost(mockUser, 'user/create')
+			} catch (error) {
+				console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
+			}
+			break;
+		case 'user/delete':
+			try {
+				await testPost(mockUser, 'user/delete')
+			} catch (error) {
+				console.log('\n\n>>>>>>>>>>>>>>ERROR<<<<<<<<<<<<\n', error.response.statusText)
+			}
+			break;
+		case 'user/getall':
+			try {
+				await testGet('user/getall')
+			} catch (error) {
+				console.log('\n\n>>>>>>>>>>>>>ERROR<<<<<<<<<<\n', error.response.statusText)
+			}
+
+		default:
+			break;
+	}
 }
 
 

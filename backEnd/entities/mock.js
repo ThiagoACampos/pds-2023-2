@@ -33,9 +33,19 @@ module.exports = {
 }
 
 // Arrumar BD trocar pra nova esturtura de Tarefa ok
+// organizar as rotas para receber request ok
 
-// organizar as rotas para receber request
-// Criar a lógica para calcular início e fim da Tarefa
+// Criar a lógica para calcular início e fim da Tarefa ok
+// Precisa ficar olhando o staus da tarefa e quando mudar atualizar o start time
+// pra salvar tem que antes buscar na fila qual o tempo ela pode começar
+// não pra salvar, mas pra formar o calendário
+// no update checar se mudou o status pra doing se sim muda satate date pra atual.
+// fazer o calendário. pega todas, acha a que está em doing e coloca nas outas o começo e fim 
+// a partir do end data do que está sendo feita.
+// criar tarefa não mexe nas datas
+// update só se mudar status
+
+
 // Criar lógica para devolver o calendário
 
 
