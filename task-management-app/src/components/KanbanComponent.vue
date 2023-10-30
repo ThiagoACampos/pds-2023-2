@@ -11,7 +11,7 @@
                   <div class="container">
                     <div class="row justify-content-end">
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
-                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
+                      <div class="col-sm"><b-icon @click="deleteTaskToDo(i)" v-b-modal.modal-delete style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
                     </div>
                   </div>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="container">
                     <div class="row justify-content-end">
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
-                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
+                      <div class="col-sm"><b-icon @click="deleteTaskInProgress(i)" v-b-modal.modal-delete style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
                     </div>
                   </div>
               </div>
@@ -44,7 +44,7 @@
                 <div class="container">
                     <div class="row justify-content-end">
                       <div class="col-sm"><b-icon style="cursor: pointer;" icon="pencil-fill" font-scale="0.7"></b-icon></div>
-                      <div class="col-sm"><b-icon style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
+                      <div class="col-sm"><b-icon @click="deleteTaskDone(i)" v-b-modal.modal-delete style="cursor: pointer;" icon="trash" font-scale="0.7"></b-icon></div>
                     </div>
                   </div>
               </div>
@@ -59,6 +59,7 @@
 
 import draggable from "vuedraggable";
 import axios from 'axios'
+import { EventBus } from '../EventBus';
 
 export default {
   components: {
@@ -74,7 +75,10 @@ export default {
     };
   },
   created: function(){
-    this.getAllTasks()
+    this.getAllTasks();
+    EventBus.$on('rerender-kanban', () => {
+      this.getAllTasks();
+    });
   },
   methods:{
     getAllTasks: function(){
@@ -125,6 +129,15 @@ export default {
         task.status = 'DONE';
         this.updateTask(task);
       }
+    },
+    deleteTaskToDo(index){
+      EventBus.$emit('delete-task', this.tasks.todo[index]);
+    },
+    deleteTaskInProgress(index){
+      EventBus.$emit('delete-task', this.tasks.inProgress[index]);
+    },
+    deleteTaskDone(index){
+      EventBus.$emit('delete-task', this.tasks.done[index]);
     }
   }
 };
