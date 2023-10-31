@@ -1,18 +1,20 @@
 const axios = require('axios');
 
 const mockTask = {
-	id: 42,
+	id: 44,
 	taskName: 'Random Tasks' + Math.floor(Math.random() * 1000),
-	priority: 4,
+	priority: 5,
 	owner: 1,
 	staff: 2,
 	description: '',
-	status: 'Done',
+	status: 'In Progress',
 	//   startDate: new Date().toISOString(),
 	//   endDate: new Date().toISOString(),
 	effortInHours: 1,
 };
 
+// For chose the request
+const key = 'task/edits'
 
 const mockUser = {
 	id: 1,
@@ -48,7 +50,7 @@ async function testGet(path) {
 
 async function callApp() {
 
-	const key = 'task/edit'
+	
 
 	switch (key) {
 

@@ -6,6 +6,12 @@ const {
 	getOneData
 } = require('../dbAdaptors/dbUtils')
 
+const {
+	TO_DO,
+	IN_PROGRESS,
+	DONE
+} = require('../utils/constants')
+
 async function getAllTasks() {
 	// Validate something
 	return await getAllData('tasks')
@@ -16,7 +22,7 @@ async function getOneTask(id) {
 }
 
 async function createTask(data) {
-	data.status = 'To Do'
+	data.status = TO_DO
 
 	return await insertData('tasks', data)
 }
@@ -44,26 +50,26 @@ function calculateStartAndEnd(data, previewStatus) {
 	const currentDate = new Date()
 
 	switch (data?.status) {
-		case 'To Do':
+		case TO_DO:
 
 			data.startDate = null
 			data.endDate = null
 
 			break;
 
-		case 'In Progress':
+		case IN_PROGRESS:
 
 			data.startDate = currentDate
 			data.endDate = new Date(new Date(currentDate.getTime() + data.effortInHours * 60 * 60 * 1000))
 
 			break;
 
-		case 'Done':
-			if (previewStatus == 'To Do') {
+		case DONE:
+			if (previewStatus == TO_DO) {
 				data.startDate = currentDate
 				data.endDate = currentDate
 
-			} else if (previewStatus == 'In Progress') {
+			} else if (previewStatus == IN_PROGRESS) {
 				data.endDate = currentDate
 
 			} else {
