@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a8cff8e5-5ecd-427e-aea3-736c27113744" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task-management-app/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-management-app/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-app/src/components/KanbanComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/components/KanbanComponent.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +58,7 @@
       <workItem from="1698266969375" duration="2720000" />
       <workItem from="1698453581912" duration="16457000" />
       <workItem from="1698547877675" duration="6067000" />
+      <workItem from="1698786987200" duration="6529000" />
     </task>
     <servers />
   </component>

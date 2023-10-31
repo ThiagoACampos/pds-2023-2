@@ -7,6 +7,7 @@
       <AddTaskComponent v-if="currentComponent === 'notCalendar'"></AddTaskComponent>
       <AddColaboratorComponent v-if="currentComponent === 'notCalendar'"></AddColaboratorComponent>
       <CalendarComponent v-if="currentComponent === 'Calendar'"></CalendarComponent>
+      <EditTaskComponent></EditTaskComponent>
       <DeleteTaskComponent></DeleteTaskComponent>
     </div>
     
@@ -21,6 +22,7 @@ import AddTaskComponent from './components/AddTaskComponent.vue';
 import AddColaboratorComponent from "@/components/AddColaboratorComponent.vue";
 import CalendarComponent from "@/components/CalendarComponent.vue";
 import DeleteTaskComponent from './components/DeleteTaskComponent.vue';
+import EditTaskComponent from "@/components/EditTaskComponent.vue";
 
 export default {
   name: 'App',
@@ -30,7 +32,8 @@ export default {
     AddTaskComponent,
     AddColaboratorComponent,
     CalendarComponent,
-    DeleteTaskComponent
+    DeleteTaskComponent,
+    EditTaskComponent
   },
   data() {
     return {
