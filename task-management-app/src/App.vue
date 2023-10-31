@@ -15,7 +15,6 @@
 
 <script>
 import { EventBus } from './EventBus';
-//import HelloWorld from './components/HelloWorld.vue'
 import SideBarComponent from './components/SideBarComponent.vue';
 import KanbanComponent from './components/KanbanComponent.vue';
 import AddTaskComponent from './components/AddTaskComponent.vue';
