@@ -10,11 +10,11 @@ const mockTask = {
 	status: 'In Progress',
 	//   startDate: new Date().toISOString(),
 	//   endDate: new Date().toISOString(),
-	effortInHours: 1,
+	workload: 1,
 };
 
 // For chose the request
-const key = 'task/edits'
+const key = 'task/getalls'
 
 const mockUser = {
 	id: 1,

@@ -52,7 +52,7 @@ try {
 	})
 
 	router.get('/task/getall', async (req, res) => {
-		await getAllTasks()
+			await getAllTasks()
 		.then(result => res.status(200).send(result))
 			.catch(err => {
 				console.log(err)
