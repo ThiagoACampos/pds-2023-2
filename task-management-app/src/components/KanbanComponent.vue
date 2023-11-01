@@ -93,6 +93,8 @@ export default {
             })
     },
     updateTask(task){
+      console.log("Updating tasks at this point IDK");
+      console.log(task);
       axios.post("http://localhost:3000/task/edit", task)
             .then(response => {
               console.log(response);

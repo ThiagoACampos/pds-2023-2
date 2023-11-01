@@ -92,7 +92,33 @@
 </template>
 
 <script>
+import axios from "axios";
 
+export default {
+
+  data() {
+    return {
+      tasksAsCalendarView: []
+    }
+  },
+  created() {
+    console.log('Calendar component created!');
+    axios.get("http://localhost:3000/calendar")
+        .then(response => {
+          console.log("Logging response from get /calendar");
+          console.log(response);
+          var tasksAsCalendarView = response.data;
+          console.log(tasksAsCalendarView);
+          this.tasksAsCalendarView = tasksAsCalendarView;
+          console.log(this.tasksAsCalendarView);
+        })
+        .catch((error) => {
+          console.log("Error trying to request to /calendar")
+          console.log(error);
+        })
+
+  }
+}
 </script>
 
 <style type="text/css">
