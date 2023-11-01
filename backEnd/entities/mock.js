@@ -13,7 +13,7 @@ const myTaskMock = {
 	status:'',
 	// startDate: currentDateTimeISO,
 	// endDate: currentDateTimeISO,
-	effortInHours: 9
+	workload: 9
 }
 
 const myUserMock = {

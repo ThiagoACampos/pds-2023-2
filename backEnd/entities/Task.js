@@ -15,7 +15,7 @@ class Task {
 		priority,
 		owner,
 		startDate,
-		effortInHours
+		workload
 	}) {
 		this.id = id
 		this.taskName = taskName

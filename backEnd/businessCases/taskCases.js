@@ -60,7 +60,7 @@ function calculateStartAndEnd(data, previewStatus) {
 		case IN_PROGRESS:
 
 			data.startDate = currentDate
-			data.endDate = new Date(new Date(currentDate.getTime() + data.effortInHours * 60 * 60 * 1000))
+			data.endDate = new Date(new Date(currentDate.getTime() + data.workload * 60 * 60 * 1000))
 
 			break;
 
@@ -70,6 +70,7 @@ function calculateStartAndEnd(data, previewStatus) {
 				data.endDate = currentDate
 
 			} else if (previewStatus == IN_PROGRESS) {
+				data.startDate = new Date(data.startDate)
 				data.endDate = currentDate
 
 			} else {
