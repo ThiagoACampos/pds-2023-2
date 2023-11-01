@@ -54,13 +54,8 @@ function translateTasks(tasks) {
 
 	}
 
-	let newDate = new Date(new Date().getTime() + 24 * 2 * 60 * 60 * 1000)
 
-	const tasksOfDay = getDayTasks(tasks, newDate)
-
-	return tasks.map((task) => {
-
-	})
+	return tasksOfTheWeek
 }
 
 function getHHMM(time) {
