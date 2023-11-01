@@ -2,7 +2,7 @@
     <div id="app">
     <Schedule :time-ground="['09:00', '18:00']" 
     :week-ground="['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']" 
-    :task-detail = tasksAsCalendarView>
+    :task-detail = "tasksAsCalendarView">
     </Schedule>
   </div>
 </template>
@@ -14,17 +14,130 @@ export default {
 
   data() {
     return {
-      tasksAsCalendarView: []
+      tasksAsCalendarView: [],
+      staticTasks2: [
+        [],
+        [],
+        [
+          {
+            "dateStart": "9:00",
+            "dateEnd": "12:00",
+            "title": "Teste 06",
+            "detail": "Teste 06"
+          },
+          {
+            "dateStart": "12:00",
+            "dateEnd": "15:00",
+            "title": "Teste 03",
+            "detail": "Teste 03"
+          }
+        ],
+        [
+          {
+            "dateStart": "9:00",
+            "dateEnd": "15:00",
+            "title": "Teste 04",
+            "detail": "Teste 04"
+          }
+        ],
+        [],
+        [],
+        []
+      ],
+      staticTasks: [
+        [
+          {
+            dateStart: '09:30',
+            dateEnd: '10:30',
+            title: 'Metting',
+            detail: 'Metting (German: Mettingen) is a commune in the Moselle department in Grand Est in north-eastern France.'
+          },
+          {
+            dateStart: '11:30',
+            dateEnd: '13:50',
+            title: 'Metting',
+            detail: 'Metting (German: Mettingen) is a commune in the Moselle department in Grand Est in north-eastern France.'
+          }
+
+        ],
+        [
+          {
+            dateStart: '10:30',
+            dateEnd: '12:00',
+            title: 'Metting',
+          },
+          {
+            dateStart: '12:30',
+            dateEnd: '14:50',
+            title: 'Metting',
+          }
+
+        ],
+        [
+          {
+            dateStart: '12:30',
+            dateEnd: '13:30',
+            title: 'Metting',
+          },
+          {
+            dateStart: '15:30',
+            dateEnd: '16:50',
+            title: 'Metting',
+          }
+
+        ],
+        [
+          {
+            dateStart: '09:50',
+            dateEnd: '10:50',
+            title: 'Metting',
+          },
+          {
+            dateStart: '11:30',
+            dateEnd: '13:50',
+            title: 'Metting',
+          }
+
+        ],
+        [
+          {
+            dateStart: '12:30',
+            dateEnd: '13:30',
+            title: 'Metting',
+          },
+          {
+            dateStart: '14:30',
+            dateEnd: '15:50',
+            title: 'Metting',
+          }
+
+        ],
+        [
+          {
+            dateStart: '12:30',
+            dateEnd: '13:30',
+            title: 'Metting',
+          },
+          {
+            dateStart: '14:30',
+            dateEnd: '15:50',
+            title: 'Test',
+            detail: 'Metting (German: Mettingen) is a commune in the Moselle department in Grand Est in north-eastern France.'
+          }
+
+        ]
+      ]
     }
   },
   created() {
-    console.log('Calendar component created!');
     axios.get("http://localhost:3000/calendar")
         .then(response => {
           console.log("Logging response from get /calendar");
           this.tasksAsCalendarView = response.data;
           console.log("this.tasksAsCalendarView");
           console.log(this.tasksAsCalendarView);
+          console.log(this.staticTasks2);
+          console.log(this.tasksAsCalendarView === this.staticTasks2);
         })
         .catch((error) => {
           console.log("Error trying to request to /calendar")

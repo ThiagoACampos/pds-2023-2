@@ -25,19 +25,76 @@ async function getCalendar() {
 	}
 
 	const tasksInOrder = [...tasksDone, taskInProgress, ...tasksToDo]
+	console.log("tasksInOrder")
 	console.log(tasksInOrder)
 
 
-
 	const response = translateTasks(tasksInOrder)
+	const response2 = translateTasks2(tasksInOrder)
 
-	return response
+
+	console.log("response")
+	console.log(response)
+
+	console.log("response2")
+	console.log(response2)
+
+	return response2
+}
+
+function translateTasks2(tasksInOrder) {
+	let weekDate = new Date().getDay() - 1;
+	const startTimeDaily = 9;
+	let currentTime = startTimeDaily;
+
+	const tasksOfTheWeek = [];
+
+	tasksInOrder.forEach((task) => {
+
+		if (currentTime + task.workload > 18){
+			weekDate += 1;
+			currentTime = startTimeDaily;
+		}
+
+		const taskTranslated = {
+			dayWeekStart: weekDate,
+			taskDetais: {
+				dateStart: getTimeHHMMFormat(currentTime),
+				dateEnd: getTimeHHMMFormat(currentTime += task.workload),
+				title: task.taskName,
+				detail: task.description
+			}
+		}
+
+		tasksOfTheWeek.push(taskTranslated);
+	});
+
+	return mapToDaysOfTheWeek(tasksOfTheWeek);
+}
+
+function mapToDaysOfTheWeek(tasksOfTheWeek) {
+
+	let daysOfTheWeekWithTasks = [];
+	for (let i = 0; i < 7; i++) {
+		daysOfTheWeekWithTasks.push([]);
+	}
+
+	tasksOfTheWeek.forEach((task) => {
+		daysOfTheWeekWithTasks[task.dayWeekStart].push(task.taskDetais)
+	});
+
+	return daysOfTheWeekWithTasks;
+
+}
+
+function getTimeHHMMFormat(hour) {
+	return String(hour) + ":00";
 }
 
 function translateTasks(tasks) {
 	const daysToReturn = []
 	const tasksOfTheWeek = []
-	for (let i = a0; i < 7; i++) {
+	for (let i = 0; i < 7; i++) {
 		let newDate = new Date(new Date().getTime() + 24 * i * 60 * 60 * 1000)
 		const tasksOfDay = getDayTasks(tasks, newDate)
 		const taskTranslated = tasksOfDay.map((task) => {
@@ -45,8 +102,8 @@ function translateTasks(tasks) {
 			return {
 				dateStart: task.startDate,
 				dateEnd: task.endDate,
-				title: 'Metting',
-				detail: ''
+				title: task.taskName,
+				detail: task.description
 			}
 
 		})

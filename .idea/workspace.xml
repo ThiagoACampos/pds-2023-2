@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8cff8e5-5ecd-427e-aea3-736c27113744" name="Changes" comment="Initial code for editing a task">
+    <list default="true" id="a8cff8e5-5ecd-427e-aea3-736c27113744" name="Changes" comment="Task editor now working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/businessCases/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/businessCases/calendar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task-management-app/src/components/CalendarComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/components/CalendarComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-management-app/src/components/EditTaskComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/components/EditTaskComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-management-app/src/components/KanbanComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/components/KanbanComponent.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,22 +31,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/otavio/Documents/UFMG/PDS/pds-2023-2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/otavio/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "calendarTest-otavio",
+    "last_opened_file_path": "/home/otavio/Documents/UFMG/PDS/pds-2023-2/backEnd",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/otavio/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/backEnd">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +63,7 @@
       <workItem from="1698266969375" duration="2720000" />
       <workItem from="1698453581912" duration="16457000" />
       <workItem from="1698547877675" duration="6067000" />
-      <workItem from="1698786987200" duration="13207000" />
+      <workItem from="1698786987200" duration="23112000" />
     </task>
     <task id="LOCAL-00001" summary="Initial code for editing a task">
       <option name="closed" value="true" />
@@ -69,7 +73,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698794723925</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Task editor now working">
+      <option name="closed" value="true" />
+      <created>1698802066913</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698802066913</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial code for editing a task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial code for editing a task" />
+    <MESSAGE value="Task editor now working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task editor now working" />
   </component>
 </project>
