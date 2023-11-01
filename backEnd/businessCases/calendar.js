@@ -51,7 +51,7 @@ function translateTasks2(tasksInOrder) {
 
 	tasksInOrder.forEach((task) => {
 
-		if (currentTime + task.workload > 18){
+		if (currentTime + task.workload >= 18){
 			weekDate += 1;
 			currentTime = startTimeDaily;
 		}

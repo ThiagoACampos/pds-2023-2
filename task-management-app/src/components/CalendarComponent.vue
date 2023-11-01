@@ -1,7 +1,7 @@
 <template>
     <div id="app">
     <Schedule :time-ground="['09:00', '18:00']" 
-    :week-ground="['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']" 
+    :week-ground="['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']"
     :task-detail = "tasksAsCalendarView">
     </Schedule>
   </div>
@@ -15,35 +15,6 @@ export default {
   data() {
     return {
       tasksAsCalendarView: [],
-      staticTasks2: [
-        [],
-        [],
-        [
-          {
-            "dateStart": "9:00",
-            "dateEnd": "12:00",
-            "title": "Teste 06",
-            "detail": "Teste 06"
-          },
-          {
-            "dateStart": "12:00",
-            "dateEnd": "15:00",
-            "title": "Teste 03",
-            "detail": "Teste 03"
-          }
-        ],
-        [
-          {
-            "dateStart": "9:00",
-            "dateEnd": "15:00",
-            "title": "Teste 04",
-            "detail": "Teste 04"
-          }
-        ],
-        [],
-        [],
-        []
-      ],
       staticTasks: [
         [
           {
@@ -126,6 +97,35 @@ export default {
           }
 
         ]
+      ],
+      staticTasks3: [
+        [],
+        [],
+        [
+          {
+            "dateStart": "9:00",
+            "dateEnd": "12:00",
+            "title": "Teste 06",
+            "detail": "Teste 06"
+          },
+          {
+            "dateStart": "12:00",
+            "dateEnd": "15:00",
+            "title": "Teste 03",
+            "detail": "Teste 03"
+          }
+        ],
+        [
+          {
+            "dateStart": "9:00",
+            "dateEnd": "15:00",
+            "title": "Teste 04",
+            "detail": "Teste 04"
+          }
+        ],
+        [],
+        [],
+        []
       ]
     }
   },
@@ -134,10 +134,7 @@ export default {
         .then(response => {
           console.log("Logging response from get /calendar");
           this.tasksAsCalendarView = response.data;
-          console.log("this.tasksAsCalendarView");
           console.log(this.tasksAsCalendarView);
-          console.log(this.staticTasks2);
-          console.log(this.tasksAsCalendarView === this.staticTasks2);
         })
         .catch((error) => {
           console.log("Error trying to request to /calendar")
