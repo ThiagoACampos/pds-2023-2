@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a8cff8e5-5ecd-427e-aea3-736c27113744" name="Changes" comment="Task editor now working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-management-app/src/components/CalendarComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/components/CalendarComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-app/src/components/KanbanComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-app/src/components/KanbanComponent.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,8 @@
       <workItem from="1698453581912" duration="16457000" />
       <workItem from="1698547877675" duration="6067000" />
       <workItem from="1698786987200" duration="32306000" />
-      <workItem from="1698849510826" duration="2719000" />
+      <workItem from="1698849510826" duration="3696000" />
+      <workItem from="1698869272472" duration="1449000" />
     </task>
     <task id="LOCAL-00001" summary="Initial code for editing a task">
       <option name="closed" value="true" />
