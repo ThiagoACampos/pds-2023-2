@@ -13,9 +13,9 @@ async function getCalendar() {
 
 	const tasks = await getAllTasks()
 
-	const taskInProgress = tasks.find((task) => task.status == IN_PROGRESS)
-	const tasksToDo = tasks.filter((task) => task.status == TO_DO)
-	const tasksDone = tasks.filter((task) => task.status == DONE)
+	const taskInProgress = tasks.find((task) => task.status === IN_PROGRESS)
+	const tasksToDo = tasks.filter((task) => task.status === TO_DO)
+	const tasksDone = tasks.filter((task) => task.status === DONE)
 
 	tasksToDo.sort((a, b) => a.priority - b.priority)
 	tasksDone.sort((a, b) => a.endDate - b.endDate)
@@ -25,24 +25,14 @@ async function getCalendar() {
 	}
 
 	const tasksInOrder = [...tasksDone, taskInProgress, ...tasksToDo]
-	console.log("tasksInOrder")
-	console.log(tasksInOrder)
 
 
 	const response = translateTasks(tasksInOrder)
-	const response2 = translateTasks2(tasksInOrder)
 
-
-	console.log("response")
-	console.log(response)
-
-	console.log("response2")
-	console.log(response2)
-
-	return response2
+	return response
 }
 
-function translateTasks2(tasksInOrder) {
+function translateTasks(tasksInOrder) {
 	let weekDate = new Date().getDay() - 1;
 	const startTimeDaily = 9;
 	let currentTime = startTimeDaily;
@@ -89,30 +79,6 @@ function mapToDaysOfTheWeek(tasksOfTheWeek) {
 
 function getTimeHHMMFormat(hour) {
 	return String(hour) + ":00";
-}
-
-function translateTasks(tasks) {
-	const daysToReturn = []
-	const tasksOfTheWeek = []
-	for (let i = 0; i < 7; i++) {
-		let newDate = new Date(new Date().getTime() + 24 * i * 60 * 60 * 1000)
-		const tasksOfDay = getDayTasks(tasks, newDate)
-		const taskTranslated = tasksOfDay.map((task) => {
-
-			return {
-				dateStart: task.startDate,
-				dateEnd: task.endDate,
-				title: task.taskName,
-				detail: task.description
-			}
-
-		})
-		tasksOfTheWeek.push(taskTranslated)
-
-	}
-
-
-	return tasksOfTheWeek
 }
 
 function getHHMM(time) {
@@ -170,42 +136,9 @@ async function getEndDate(task) {
 
 
 module.exports = {
-	getCalendar
+	getCalendar,
+	translateTasks,
+	getTimeHHMMFormat,
+	mapToDaysOfTheWeek,
+	addPredictedDate
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function getCalendarDays() {
-	const currentDate = new Date()
-	const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-	const day = currentDate.getDate()
-	const month = monthNames[currentDate.getMonth()]
-	const daysToCalendar = []
-}
-
-
-
